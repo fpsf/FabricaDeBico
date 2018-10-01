@@ -2,12 +2,10 @@ package fatec.ads.fabbico.controller;
 
 import fatec.ads.fabbico.ents.Bico;
 import fatec.ads.fabbico.repos.RepoBico;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Classe controladora com as rotas de requisições essenciais.
@@ -21,7 +19,7 @@ import java.util.List;
  * }
  *
  */
-@RestController(value = "bicos")
+@RestController
 public class RestBicos {
 
     private RepoBico repoBico;
@@ -35,6 +33,12 @@ public class RestBicos {
         return repoBico.findAll();
     }
 
+
+    @RequestMapping(value = "/p", method = RequestMethod.GET)
+    public String p(String data) {
+        return data;
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     public void addBico(@RequestBody BicoRequest bicoRequest){
         Bico bico = new Bico();
@@ -42,6 +46,28 @@ public class RestBicos {
         bico.setDescricao(bicoRequest.getDescricao());
         bico.setBeneficios(bicoRequest.getBeneficios());
         repoBico.save(bico);
+    }
+
+    @RequestMapping(value = "/titulo", method = RequestMethod.GET)
+    public String oneBico(String titulo) {
+        List<Bico> opt = repoBico.findBicosByTituloContains(titulo);
+        StringBuilder ret = new StringBuilder("[\n");
+        for(int i = 0; i < opt.size(); i++){
+            ret.append("{\"id\":\"").append(opt.get(i).getId()).append("\",\"descricao\":\"").append(opt.get(i).getDescricao()).append("\",\"beneficios\":\"").append(opt.get(i).getBeneficios()).append("\"}");
+            if (i != opt.size() - 1){
+                ret.append(",");
+            }
+            ret.append("\n");
+        }
+        ret.append("]");
+        return ret.toString();
+    }
+
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public String oneBico(@PathVariable("id") long id) {
+        Optional<Bico> opt = repoBico.findById(id);
+        return "{\"titulo\":\""+opt.get().getTitulo()+"\",\"descricao\":\""+opt.get().getDescricao()+"\",\"beneficios\":\""+opt.get().getBeneficios()+"\"}";
     }
 
 }

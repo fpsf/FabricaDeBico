@@ -17,7 +17,6 @@ public class Bico {
 
     private String beneficios;
 
-
     public long getId() {
         return id;
     }
