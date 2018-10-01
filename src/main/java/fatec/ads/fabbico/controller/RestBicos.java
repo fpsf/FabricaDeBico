@@ -1,9 +1,12 @@
 package fatec.ads.fabbico.controller;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import fatec.ads.fabbico.ents.Bico;
 import fatec.ads.fabbico.repos.RepoBico;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.text.View;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,12 +36,6 @@ public class RestBicos {
         return repoBico.findAll();
     }
 
-
-    @RequestMapping(value = "/p", method = RequestMethod.GET)
-    public String p(String data) {
-        return data;
-    }
-
     @RequestMapping(method = RequestMethod.POST)
     public void addBico(@RequestBody BicoRequest bicoRequest){
         Bico bico = new Bico();
@@ -48,8 +45,25 @@ public class RestBicos {
         repoBico.save(bico);
     }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public List<String> oneBicoById(@PathVariable("id") long id){
+        Optional<Bico> opt = repoBico.findById(id);
+        List<String> str = new ArrayList<>();
+        str.add(opt.get().getTitulo());
+        str.add(opt.get().getDescricao());
+        str.add(opt.get().getBeneficios());
+        return str;
+    }
+
     @RequestMapping(value = "/titulo", method = RequestMethod.GET)
-    public String oneBico(String titulo) {
+    public List<Bico> bicosByNome(String titulo) {
+        return repoBico.findBicosByTituloContains(titulo);
+    }
+
+
+    /*
+    @RequestMapping(value = "/titulo", method = RequestMethod.GET)
+    public String bicosByNome(String titulo) {
         List<Bico> opt = repoBico.findBicosByTituloContains(titulo);
         StringBuilder ret = new StringBuilder("[\n");
         for(int i = 0; i < opt.size(); i++){
@@ -69,5 +83,6 @@ public class RestBicos {
         Optional<Bico> opt = repoBico.findById(id);
         return "{\"titulo\":\""+opt.get().getTitulo()+"\",\"descricao\":\""+opt.get().getDescricao()+"\",\"beneficios\":\""+opt.get().getBeneficios()+"\"}";
     }
+    */
 
 }

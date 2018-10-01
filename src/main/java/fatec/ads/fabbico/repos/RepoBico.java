@@ -11,6 +11,4 @@ public interface RepoBico extends JpaRepository<Bico, Long> {
 
     List<Bico> findBicosByTituloContains(String titulo);
 
-    Bico findBicoByTituloContains(String titulo);
-
 }
