@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f143bc7e-c40e-494b-89ea-df2ebe616fed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/Run.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/Run.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/controller/FrontController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/controller/RestBicos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/controller/RestBicos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/ents/Bico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/ents/Bico.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestBicos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestBicos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/ents/Bico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/ents/Bico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/repos/RepoBico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/repos/RepoBico.java" afterDir="false" />
-    </list>
+    <list default="true" id="f143bc7e-c40e-494b-89ea-df2ebe616fed" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -200,7 +190,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538400117544" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538400314079" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../spring-boot-rest-example" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -277,18 +267,25 @@
       <updated>1538338653143</updated>
       <workItem from="1538338654689" duration="6805000" />
       <workItem from="1538345859189" duration="2478000" />
-      <workItem from="1538392289503" duration="7595000" />
+      <workItem from="1538392289503" duration="7852000" />
     </task>
+    <task id="LOCAL-00001" summary="Novas Rotas Alternativas.">
+      <created>1538400134059</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1538400134059</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16878000" />
+    <option name="totallyTimeSpent" value="17135000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="732" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25757575" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25757575" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -307,7 +304,7 @@
       <window_info anchor="bottom" id="Build" order="7" weight="0.32952693" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32789558" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Messages" order="10" visible="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Spring" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
@@ -332,6 +329,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+    <MESSAGE value="Novas Rotas Alternativas." />
+    <option name="LAST_COMMIT_MESSAGE" value="Novas Rotas Alternativas." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html" />
