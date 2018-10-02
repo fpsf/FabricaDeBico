@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f143bc7e-c40e-494b-89ea-df2ebe616fed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/controller/RestBicos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/controller/RestBicos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/ents/Bico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/ents/Bico.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/repos/RepoBico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/repos/RepoBico.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestBicos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestBicos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/ents/Bico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/ents/Bico.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -50,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestBicos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+            <state relative-caret-position="795">
+              <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1906#1907#0" expanded="true" />
@@ -117,8 +113,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/Run.java" />
         <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/repos/RepoBico.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestBicos.java" />
         <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/ents/Bico.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestBicos.java" />
       </list>
     </option>
   </component>
@@ -192,7 +188,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538489076790" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538489355281" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../spring-boot-rest-example" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -270,7 +266,7 @@
       <workItem from="1538338654689" duration="6805000" />
       <workItem from="1538345859189" duration="2478000" />
       <workItem from="1538392289503" duration="15621000" />
-      <workItem from="1536450290903" duration="1424000" />
+      <workItem from="1536450290903" duration="1702000" />
     </task>
     <task id="LOCAL-00001" summary="Novas Rotas Alternativas.">
       <created>1538400134059</created>
@@ -293,11 +289,18 @@
       <option name="project" value="LOCAL" />
       <updated>1538402060255</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="JSONView Funcional.">
+      <created>1538489127198</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1538489127199</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26328000" />
+    <option name="totallyTimeSpent" value="26606000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="732" extended-state="6" />
@@ -348,7 +351,8 @@
     </ignored-roots>
     <MESSAGE value="Novas Rotas Alternativas." />
     <MESSAGE value="Consertos de Código Iniciados." />
-    <option name="LAST_COMMIT_MESSAGE" value="Consertos de Código Iniciados." />
+    <MESSAGE value="JSONView Funcional." />
+    <option name="LAST_COMMIT_MESSAGE" value="JSONView Funcional." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html" />
@@ -412,8 +416,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestBicos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+        <state relative-caret-position="795">
+          <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1906#1907#0" expanded="true" />

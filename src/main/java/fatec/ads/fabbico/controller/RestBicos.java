@@ -59,35 +59,4 @@ public class RestBicos {
         return repoBico.findBicosByTituloContains(titulo);
     }
 
-    /*
-    public static class Views{
-        static class Todos{}
-        static class Alt{}
-    }
-    */
-
-    /*
-    @RequestMapping(value = "/titulo", method = RequestMethod.GET)
-    public String bicosByNome(String titulo) {
-        List<Bico> opt = repoBico.findBicosByTituloContains(titulo);
-        StringBuilder ret = new StringBuilder("[\n");
-        for(int i = 0; i < opt.size(); i++){
-            ret.append("{\"id\":\"").append(opt.get(i).getId()).append("\",\"descricao\":\"").append(opt.get(i).getDescricao()).append("\",\"beneficios\":\"").append(opt.get(i).getBeneficios()).append("\"}");
-            if (i != opt.size() - 1){
-                ret.append(",");
-            }
-            ret.append("\n");
-        }
-        ret.append("]");
-        return ret.toString();
-    }
-
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String oneBico(@PathVariable("id") long id) {
-        Optional<Bico> opt = repoBico.findById(id);
-        return "{\"titulo\":\""+opt.get().getTitulo()+"\",\"descricao\":\""+opt.get().getDescricao()+"\",\"beneficios\":\""+opt.get().getBeneficios()+"\"}";
-    }
-    */
-
 }
