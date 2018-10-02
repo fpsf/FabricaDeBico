@@ -1,12 +1,11 @@
 package fatec.ads.fabbico.controller;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonView;
 import fatec.ads.fabbico.ents.Bico;
 import fatec.ads.fabbico.repos.RepoBico;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.text.View;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,7 +16,7 @@ import java.util.Optional;
  *
  * {
  * "titulo": "Vendedor de Revovi",
- * "descricao": "Vender uns revovi por 500 conto",
+ * "descricao": "Vender uns revovi por 500 conto.",
  * "beneficios": "50% do lucro obtido por venda e um revovi para defesa pessoal"
  * }
  *
@@ -32,6 +31,7 @@ public class RestBicos {
     }
 
     @RequestMapping(method = RequestMethod.GET)
+    @JsonView(Bico.DefaultView.class)
     public List<Bico> allBicos(){
         return repoBico.findAll();
     }
@@ -46,20 +46,25 @@ public class RestBicos {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public List<String> oneBicoById(@PathVariable("id") long id){
-        Optional<Bico> opt = repoBico.findById(id);
-        List<String> str = new ArrayList<>();
-        str.add(opt.get().getTitulo());
-        str.add(opt.get().getDescricao());
-        str.add(opt.get().getBeneficios());
-        return str;
+    @JsonIgnoreProperties("id")
+    @JsonView(Bico.OneView.class)
+    public Optional<Bico> oneBicoById(@PathVariable("id") long id){
+        return repoBico.findById(id);
     }
 
     @RequestMapping(value = "/titulo", method = RequestMethod.GET)
+    @JsonIgnoreProperties("titulo")
+    @JsonView(Bico.TSView.class)
     public List<Bico> bicosByNome(String titulo) {
         return repoBico.findBicosByTituloContains(titulo);
     }
 
+    /*
+    public static class Views{
+        static class Todos{}
+        static class Alt{}
+    }
+    */
 
     /*
     @RequestMapping(value = "/titulo", method = RequestMethod.GET)
