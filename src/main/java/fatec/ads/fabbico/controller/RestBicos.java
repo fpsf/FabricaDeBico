@@ -1,13 +1,15 @@
 package fatec.ads.fabbico.controller;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonView;
 import fatec.ads.fabbico.ents.Bico;
 import fatec.ads.fabbico.repos.RepoBico;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * Classe controladora com as rotas de requisições essenciais.
@@ -22,6 +24,7 @@ import java.util.Optional;
  *
  */
 @RestController
+@RequestMapping("/main")
 public class RestBicos {
 
     private RepoBico repoBico;
@@ -30,33 +33,73 @@ public class RestBicos {
         this.repoBico = repoBico;
     }
 
+    @RequestMapping(method = RequestMethod.POST)
+    public ResponseEntity addBico(@RequestBody BicoRequestBody bicoRequest){
+        try{
+            Bico bico = new Bico();
+            bico.setTitulo(bicoRequest.getTitulo());
+            bico.setPagamento(bicoRequest.getPagamento());
+            // TODO Isso está certo?
+            bico.setUsuario(bicoRequest.getUsuario());
+            bico.setContato(bicoRequest.getContato());
+            repoBico.save(bico);
+            return new ResponseEntity(HttpStatus.OK);
+        }
+        catch (Exception e){
+            return new ResponseEntity(HttpStatus.NOT_ACCEPTABLE);
+        }
+
+    }
+
     @RequestMapping(method = RequestMethod.GET)
-    @JsonView(Bico.DefaultView.class)
+    public List<Bico> allBicos(){
+        return repoBico.findAll();
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE)
+    public  ResponseEntity deleteBico(@RequestBody String index){
+        try {
+            repoBico.deleteById(index);
+            return new ResponseEntity(HttpStatus.OK);
+        }
+        catch (Exception e){
+            return new ResponseEntity(HttpStatus.NO_CONTENT);
+        }
+    }
+
+    /*
+    @RequestMapping(method = RequestMethod.GET)
     public List<Bico> allBicos(){
         return repoBico.findAll();
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public void addBico(@RequestBody BicoRequest bicoRequest){
-        Bico bico = new Bico();
-        bico.setTitulo(bicoRequest.getTitulo());
-        bico.setDescricao(bicoRequest.getDescricao());
-        bico.setBeneficios(bicoRequest.getBeneficios());
-        repoBico.save(bico);
+    public ResponseEntity addBico(@RequestBody BicoRequest bicoRequest){
+        try{
+            Bico bico = new Bico();
+            bico.setTitulo(bicoRequest.getTitulo());
+            bico.setDescricao(bicoRequest.getDescricao());
+            bico.setBeneficios(bicoRequest.getBeneficios());
+            repoBico.save(bico);
+            return new ResponseEntity(HttpStatus.OK);
+        }
+        catch (Exception e){
+            return new ResponseEntity(HttpStatus.NOT_ACCEPTABLE);
+        }
+
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @JsonIgnoreProperties("id")
-    @JsonView(Bico.OneView.class)
     public Optional<Bico> oneBicoById(@PathVariable("id") long id){
         return repoBico.findById(id);
     }
 
     @RequestMapping(value = "/titulo", method = RequestMethod.GET)
     @JsonIgnoreProperties("titulo")
-    @JsonView(Bico.TSView.class)
     public List<Bico> bicosByNome(String titulo) {
         return repoBico.findBicosByTituloContains(titulo);
     }
+    */
 
 }

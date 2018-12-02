@@ -1,0 +1,8 @@
+.gradle
+.idea
+gradle
+out
+.directory
+FabricaDeBico.iml
+gradlew
+gradlew.bat

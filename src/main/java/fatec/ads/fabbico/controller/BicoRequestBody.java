@@ -1,34 +1,20 @@
-package fatec.ads.fabbico.ents;
+package fatec.ads.fabbico.controller;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import fatec.ads.fabbico.ents.Usuario;
+
 import java.math.BigDecimal;
 
-@Entity
-public class Bico {
+public class BicoRequestBody {
 
-    /*
-    @Id
-    @GeneratedValue
-    long id;
-    */
-
-    @Id
     private String titulo;
-
-    // private String descricao;
 
     private BigDecimal pagamento;
 
-    // private String beneficios;
-
-    @ManyToOne
     private Usuario usuario;
 
     private String contato;
 
-    public String getTitulo() {
+    String getTitulo() {
         return titulo;
     }
 
@@ -36,7 +22,8 @@ public class Bico {
         this.titulo = titulo;
     }
 
-    public BigDecimal getPagamento() {
+
+    BigDecimal getPagamento() {
         return pagamento;
     }
 
@@ -44,7 +31,7 @@ public class Bico {
         this.pagamento = pagamento;
     }
 
-    public Usuario getUsuario() {
+    Usuario getUsuario() {
         return usuario;
     }
 
@@ -52,7 +39,7 @@ public class Bico {
         this.usuario = usuario;
     }
 
-    public String getContato() {
+    String getContato() {
         return contato;
     }
 
