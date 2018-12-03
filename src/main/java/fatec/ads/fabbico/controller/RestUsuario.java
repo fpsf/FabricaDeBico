@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
-
 @RestController
 public class RestUsuario {
 
@@ -24,7 +22,7 @@ public class RestUsuario {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public boolean autorizar(String token){
+    public Usuario autorizar(String token){
         // TODO Desencriptografar o token JWT.
         ObjectMapper mapper = new ObjectMapper();
         String credentialsJson = Jwts.parser()
@@ -32,17 +30,15 @@ public class RestUsuario {
                 .parseClaimsJws(token)
                 .getBody()
                 .get("userDetails", String.class);
-        Optional<Usuario> usuario = repoUsuario.findById(token);
-        return usuario.isPresent();
+        return repoUsuario.findUsuarioByNome(token);
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public boolean cadastrar(String token){
+    public Usuario cadastrar(String token){
         // TODO Desencriptografar o token JWT.
         Usuario placeholder = new Usuario();
         repoUsuario.save(placeholder);
-        Optional<Usuario> usuario = repoUsuario.findById(token);
-        return usuario.isPresent();
+        return repoUsuario.findUsuarioByNome(token);
     }
 
 }

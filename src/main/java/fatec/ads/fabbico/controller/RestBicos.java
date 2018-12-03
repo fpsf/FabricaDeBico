@@ -37,10 +37,9 @@ public class RestBicos {
     public ResponseEntity addBico(@RequestBody BicoRequestBody bicoRequest){
         try{
             Bico bico = new Bico();
+            // TODO Isso está certo?
             bico.setTitulo(bicoRequest.getTitulo());
             bico.setPagamento(bicoRequest.getPagamento());
-            // TODO Isso está certo?
-            bico.setUsuario(bicoRequest.getUsuario());
             bico.setContato(bicoRequest.getContato());
             repoBico.save(bico);
             return new ResponseEntity(HttpStatus.OK);

@@ -5,7 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RepoUsuario extends JpaRepository<Usuario, String> {
+public interface RepoUsuario extends JpaRepository<Usuario, Integer> {
+
+    Usuario findUsuarioByNome(String nome);
 
     // https://x-team.com/blog/storing-secure-passwords-with-postgresql/
     // https://www.meetspaceapp.com/2016/04/12/passwords-postgresql-pgcrypto.html

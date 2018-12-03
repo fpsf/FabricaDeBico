@@ -1,18 +1,24 @@
 package fatec.ads.fabbico.controller;
 
-import fatec.ads.fabbico.ents.Usuario;
-
 import java.math.BigDecimal;
 
 public class BicoRequestBody {
+
+    private long id;
 
     private String titulo;
 
     private BigDecimal pagamento;
 
-    private Usuario usuario;
-
     private String contato;
+
+    long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     String getTitulo() {
         return titulo;
@@ -29,14 +35,6 @@ public class BicoRequestBody {
 
     public void setPagamento(BigDecimal pagamento) {
         this.pagamento = pagamento;
-    }
-
-    Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
     }
 
     String getContato() {
