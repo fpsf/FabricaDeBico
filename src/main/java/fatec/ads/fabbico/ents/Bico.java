@@ -16,7 +16,7 @@ public class Bico {
 
     private BigDecimal pagamento;
 
-    private String contato;
+    private String email;
 
     public long getId() {
         return id;
@@ -42,11 +42,11 @@ public class Bico {
         this.pagamento = pagamento;
     }
 
-    public String getContato() {
-        return contato;
+    public String getEmail() {
+        return email;
     }
 
-    public void setContato(String contato) {
-        this.contato = contato;
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

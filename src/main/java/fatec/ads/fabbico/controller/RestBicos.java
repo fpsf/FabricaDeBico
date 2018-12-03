@@ -40,7 +40,7 @@ public class RestBicos {
             // TODO Isso está certo?
             bico.setTitulo(bicoRequest.getTitulo());
             bico.setPagamento(bicoRequest.getPagamento());
-            bico.setContato(bicoRequest.getContato());
+            bico.setEmail(bicoRequest.getEmail());
             repoBico.save(bico);
             return new ResponseEntity(HttpStatus.OK);
         }

@@ -10,7 +10,7 @@ public class BicoRequestBody {
 
     private BigDecimal pagamento;
 
-    private String contato;
+    private String email;
 
     long getId() {
         return id;
@@ -37,11 +37,11 @@ public class BicoRequestBody {
         this.pagamento = pagamento;
     }
 
-    String getContato() {
-        return contato;
+    String getEmail() {
+        return email;
     }
 
-    public void setContato(String contato) {
-        this.contato = contato;
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
