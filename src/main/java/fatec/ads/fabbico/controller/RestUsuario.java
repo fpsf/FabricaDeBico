@@ -1,13 +1,17 @@
 package fatec.ads.fabbico.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import fatec.ads.fabbico.ents.Usuario;
 import fatec.ads.fabbico.repos.RepoUsuario;
-import io.jsonwebtoken.Jwts;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Objects;
+
+import static org.springframework.security.crypto.bcrypt.BCrypt.checkpw;
 
 @RestController
 public class RestUsuario {
@@ -21,19 +25,19 @@ public class RestUsuario {
         this.repoUsuario = repoUsuario;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
-    public Usuario autorizar(String token){
+    @RequestMapping(method = RequestMethod.POST)
+    public ResponseEntity login(String nome, String pass){
         // TODO Desencriptografar o token JWT.
-        ObjectMapper mapper = new ObjectMapper();
-        String credentialsJson = Jwts.parser()
-                .setSigningKey(KEY)
-                .parseClaimsJws(token)
-                .getBody()
-                .get("userDetails", String.class);
-        return repoUsuario.findUsuarioByNome(token);
+        Usuario usuario = repoUsuario.findUsuarioByNome(nome);
+        if(Objects.equals(nome, usuario.getNome()) && checkpw(pass, usuario.getSenha())){
+            return new ResponseEntity(HttpStatus.OK);
+        }
+        else{
+            return new ResponseEntity(HttpStatus.OK);
+        }
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.GET)
     public Usuario cadastrar(String token){
         // TODO Desencriptografar o token JWT.
         Usuario placeholder = new Usuario();

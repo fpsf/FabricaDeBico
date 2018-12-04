@@ -2,6 +2,7 @@ package fatec.ads.fabbico.controller;
 
 import fatec.ads.fabbico.ents.Bico;
 import fatec.ads.fabbico.repos.RepoBico;
+import fatec.ads.fabbico.reqbodies.BicoRequestBody;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -40,7 +41,8 @@ public class RestBicos {
             // TODO Isso está certo?
             bico.setTitulo(bicoRequest.getTitulo());
             bico.setPagamento(bicoRequest.getPagamento());
-            bico.setEmail(bicoRequest.getEmail());
+            bico.setDescricao(bicoRequest.getDescricao());
+            bico.setUsuario_id(bicoRequest.getUsuario_id());
             repoBico.save(bico);
             return new ResponseEntity(HttpStatus.OK);
         }
@@ -56,15 +58,18 @@ public class RestBicos {
     }
 
     @RequestMapping(method = RequestMethod.DELETE)
-    public  ResponseEntity deleteBico(@RequestBody String index){
+    public  ResponseEntity deleteBico(@RequestBody BicoRequestBody bicoRequest){
         try {
-            repoBico.deleteById(index);
+            repoBico.deleteById(bicoRequest.getId());
             return new ResponseEntity(HttpStatus.OK);
         }
         catch (Exception e){
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }
     }
+
+    // @RequestMapping(method = RequestMethod.PATCH)
+    // pub
 
     /*
     @RequestMapping(method = RequestMethod.GET)

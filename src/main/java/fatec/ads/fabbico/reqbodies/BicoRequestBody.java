@@ -1,16 +1,10 @@
-package fatec.ads.fabbico.ents;
+package fatec.ads.fabbico.reqbodies;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import fatec.ads.fabbico.ents.Usuario;
 
-@Entity
-public class Bico {
+public class BicoRequestBody {
 
-    @Id
-    @GeneratedValue
-    long id;
+    private long id;
 
     private String titulo;
 
@@ -18,7 +12,6 @@ public class Bico {
 
     private String descricao;
 
-    @ManyToOne
     private Usuario usuario_id;
 
     public long getId() {
