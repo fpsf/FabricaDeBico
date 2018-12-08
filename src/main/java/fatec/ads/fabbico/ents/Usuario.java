@@ -1,5 +1,8 @@
 package fatec.ads.fabbico.ents;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import fatec.ads.fabbico.jsonviews.ClasseViews;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,17 +14,18 @@ public class Usuario {
 
     @Id
     @GeneratedValue
+    @JsonView(ClasseViews.UserView.class)
     long id;
 
-    @Id
+    @JsonView(ClasseViews.UserView.class)
     private String nome;
 
     private String senha;
 
-    private String token;
-
+    @JsonView(ClasseViews.UserView.class)
     private String email;
 
+    @JsonView(ClasseViews.UserView.class)
     private String telefone;
 
     @OneToMany
@@ -49,14 +53,6 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
     }
 
     public String getEmail() {

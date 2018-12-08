@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f143bc7e-c40e-494b-89ea-df2ebe616fed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/reqbodies/BicoRequestBody.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/reqbodies/UserRequestBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/FabricaDeBico_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/FabricaDeBico_main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/controller/BicoRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/controller/RestBicos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/controller/RestBicos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/ents/Bico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/ents/Bico.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/repos/RepoBico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/fatec/ads/fabbico/repos/RepoBico.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/BicoRequestBody.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestBicos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestBicos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/ents/Bico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/ents/Bico.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/ents/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/ents/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/repos/RepoBico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/repos/RepoBico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/repos/RepoUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/repos/RepoUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/jsonviews/ClasseViews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/jsonviews/ClasseViews.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -57,21 +49,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="Biqueira: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="identifier.sqlite" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="identifier.sqlite" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="identifier.sqlite" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="90513b60:SqliteImplModel$Schema" />
-      </path>
     </expand>
     <select />
   </component>
@@ -91,20 +68,21 @@
     <session id="-345863912">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="12" />
           <entry key="project.open.time.105" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.177" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.20" value="1" />
-          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.3" value="2" />
+          <entry key="project.open.time.307" value="1" />
           <entry key="project.open.time.71" value="2" />
           <entry key="project.open.time.72" value="1" />
           <entry key="project.open.time.76" value="1" />
           <entry key="project.open.time.85" value="1" />
           <entry key="project.open.time.91" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -113,7 +91,7 @@
           <entry key="SpringLocalModels/module=FabricaDeBico_main" value="2" />
           <entry key="gitignore" value="2" />
           <entry key="gradle" value="3" />
-          <entry key="java" value="52" />
+          <entry key="java" value="61" />
           <entry key="properties" value="1" />
           <entry key="sql" value="2" />
         </counts>
@@ -121,7 +99,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="3" />
-          <entry key="JAVA" value="52" />
+          <entry key="JAVA" value="61" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Properties" value="1" />
           <entry key="Scratch" value="2" />
@@ -132,17 +110,17 @@
         <counts>
           <entry key="gitignore" value="76" />
           <entry key="gradle" value="15" />
-          <entry key="java" value="1986" />
+          <entry key="java" value="2393" />
           <entry key="properties" value="4" />
           <entry key="sql" value="124" />
-          <entry key="txt" value="26" />
+          <entry key="txt" value="64" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="15" />
-          <entry key="JAVA" value="1986" />
-          <entry key="PLAIN_TEXT" value="102" />
+          <entry key="JAVA" value="2393" />
+          <entry key="PLAIN_TEXT" value="140" />
           <entry key="Properties" value="4" />
           <entry key="SQL" value="121" />
           <entry key="Scratch" value="3" />
@@ -157,32 +135,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestBicos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+            <state relative-caret-position="165">
+              <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/repos/RepoBico.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/repos/RepoUsuario.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -190,8 +150,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestUsuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+            <state relative-caret-position="75">
+              <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -199,11 +159,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/ents/Usuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+            <state relative-caret-position="75">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/jsonviews/ClasseViews.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/ents/Bico.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -609,20 +587,20 @@
         <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/security/EncDec.java" />
         <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/UsuarioRequest.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/jsonviews/ClasseViews.java" />
         <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/BicoRequest.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/repos/RepoBico.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/BicoRequestBody.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/ents/Usuario.java" />
         <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/reqbodies/UserRequestBody.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/ents/Bico.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/7921fd93-0994-4993-9743-f76514edf035/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/reqbodies/BicoRequestBody.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestBicos.java" />
         <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/repos/RepoUsuario.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/jsonviews/ClasseViews.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/ents/Bico.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/ents/Usuario.java" />
         <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestUsuario.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestBicos.java" />
       </list>
     </option>
   </component>
@@ -644,8 +622,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -704,6 +682,15 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="fabbico" type="462c0819:PsiDirectoryNode" />
+              <item name="jsonviews" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FabricaDeBico" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FabricaDeBico" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="fabbico" type="462c0819:PsiDirectoryNode" />
               <item name="repos" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -731,13 +718,16 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543931550905" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543931907813" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Fabrica_de_Bico" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -833,7 +823,9 @@
       <workItem from="1543400461652" duration="8275000" />
       <workItem from="1543706584783" duration="10616000" />
       <workItem from="1543879953749" duration="2136000" />
-      <workItem from="1543915455089" duration="11480000" />
+      <workItem from="1543915455089" duration="11567000" />
+      <workItem from="1544094919572" duration="646000" />
+      <workItem from="1544229013401" duration="5541000" />
     </task>
     <task id="LOCAL-00001" summary="Novas Rotas Alternativas.">
       <created>1538400134059</created>
@@ -884,16 +876,24 @@
       <option name="project" value="LOCAL" />
       <updated>1543881551010</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Mais reestruturamentos.">
+      <created>1543931861011</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1543931861011</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74493000" />
+    <option name="totallyTimeSpent" value="80767000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="732" extended-state="6" />
+    <frame x="-4" y="-4" width="1374" height="740" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3030303" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3128788" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -902,8 +902,6 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Web" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Database Console" weight="0.32840723" />
-      <window_info anchor="bottom" id="SQL Generator" weight="0.32840723" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32840723" />
@@ -919,6 +917,8 @@
       <window_info anchor="bottom" id="Spring" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Console" order="15" weight="0.32840723" />
+      <window_info anchor="bottom" id="SQL Generator" order="16" weight="0.32840723" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -949,7 +949,8 @@
     <MESSAGE value="Limpeza de Código" />
     <MESSAGE value="Adaptações" />
     <MESSAGE value="Contato -&gt; Email" />
-    <option name="LAST_COMMIT_MESSAGE" value="Contato -&gt; Email" />
+    <MESSAGE value="Mais reestruturamentos." />
+    <option name="LAST_COMMIT_MESSAGE" value="Mais reestruturamentos." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html" />
@@ -1427,13 +1428,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/jsonviews/ClasseViews.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/2.0.10.RELEASE/b7c6de4b7a506d67f608113b6ecf21091b927002/spring-data-commons-2.0.10.RELEASE-sources.jar!/org/springframework/data/repository/CrudRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
@@ -1455,19 +1449,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/ents/Bico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="61" column="5" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="61" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1478,39 +1459,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/ents/Usuario.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/repos/RepoUsuario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#878#879#0" expanded="true" />
-            <element signature="e#906#907#0" expanded="true" />
-            <element signature="e#948#949#0" expanded="true" />
-            <element signature="e#982#983#0" expanded="true" />
-            <element signature="e#817#818#0" expanded="true" />
-            <element signature="e#845#846#0" expanded="true" />
-            <element signature="e#887#888#0" expanded="true" />
-            <element signature="e#921#922#0" expanded="true" />
-            <element signature="e#990#991#0" expanded="true" />
-            <element signature="e#1021#1022#0" expanded="true" />
-            <element signature="e#1069#1070#0" expanded="true" />
-            <element signature="e#1109#1110#0" expanded="true" />
-            <element signature="e#790#791#0" expanded="true" />
-            <element signature="e#818#819#0" expanded="true" />
-            <element signature="e#864#865#0" expanded="true" />
-            <element signature="e#898#899#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestBicos.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1521,27 +1480,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/repos/RepoUsuario.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/ents/Bico.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        <state relative-caret-position="255">
+          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-core/5.0.8.RELEASE/eacb961f1d4b542fb4b4bcd1321d0ae9e4b93843/spring-security-core-5.0.8.RELEASE-sources.jar!/org/springframework/security/crypto/bcrypt/BCrypt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="657" column="26" selection-start-line="657" selection-start-column="26" selection-end-line="657" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/jsonviews/ClasseViews.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.jsonwebtoken/jjwt/0.9.0/187f92a3dfda677bed7c382c6c8ea9c370256d14/jjwt-0.9.0-sources.jar!/io/jsonwebtoken/JwtBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="396" column="11" selection-start-line="396" selection-start-column="11" selection-end-line="396" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/ents/Usuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestUsuario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+        <state relative-caret-position="75">
+          <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/main/java/fatec/ads/fabbico/controller/RestBicos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        <state relative-caret-position="165">
+          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

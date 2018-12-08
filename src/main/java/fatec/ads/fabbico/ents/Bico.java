@@ -1,5 +1,8 @@
 package fatec.ads.fabbico.ents;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import fatec.ads.fabbico.jsonviews.ClasseViews;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,11 +14,14 @@ public class Bico {
     @Id
     @GeneratedValue
     long id;
-
+    
+    @JsonView(ClasseViews.BicoView.class)
     private String titulo;
 
+    @JsonView(ClasseViews.BicoView.class)
     private String pagamento;
 
+    @JsonView(ClasseViews.BicoView.class)
     private String descricao;
 
     @ManyToOne
