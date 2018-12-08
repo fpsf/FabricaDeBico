@@ -1,6 +1,8 @@
 package fatec.ads.fabbico.controller;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import fatec.ads.fabbico.ents.Bico;
+import fatec.ads.fabbico.jsonviews.ClasseViews;
 import fatec.ads.fabbico.repos.RepoBico;
 import fatec.ads.fabbico.reqbodies.BicoRequestBody;
 import org.springframework.http.HttpStatus;
@@ -28,6 +30,8 @@ import java.util.List;
 @RequestMapping("/main")
 public class RestBicos {
 
+    // TODO Associar bicos a usuários.
+
     private RepoBico repoBico;
 
     public RestBicos(RepoBico repoBico){
@@ -52,7 +56,20 @@ public class RestBicos {
 
     }
 
+    @RequestMapping(method = RequestMethod.PATCH)
+    public ResponseEntity updateBico(@RequestBody BicoRequestBody bicoRequest){
+        try{
+            deleteBico(bicoRequest);
+            addBico(bicoRequest);
+            return new ResponseEntity(HttpStatus.OK);
+        }
+        catch (Exception e){
+            return new ResponseEntity(HttpStatus.FAILED_DEPENDENCY);
+        }
+    }
+
     @RequestMapping(method = RequestMethod.GET)
+    @JsonView(ClasseViews.BicoView.class)
     public List<Bico> allBicos(){
         return repoBico.findAll();
     }
