@@ -3,10 +3,7 @@ package fatec.ads.fabbico.ents;
 import com.fasterxml.jackson.annotation.JsonView;
 import fatec.ads.fabbico.jsonviews.ClasseViews;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Bico {
@@ -24,7 +21,7 @@ public class Bico {
     @JsonView(ClasseViews.BicoView.class)
     private String descricao;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Usuario usuario_id;
 
     public long getId() {

@@ -3,10 +3,7 @@ package fatec.ads.fabbico.ents;
 import com.fasterxml.jackson.annotation.JsonView;
 import fatec.ads.fabbico.jsonviews.ClasseViews;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -28,7 +25,7 @@ public class Usuario {
     @JsonView(ClasseViews.UserView.class)
     private String telefone;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Bico> bicos;
 
     public long getId() {

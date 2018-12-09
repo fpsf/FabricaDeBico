@@ -1,5 +1,6 @@
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import fatec.ads.fabbico.Run;
 import fatec.ads.fabbico.ents.Usuario;
 import fatec.ads.fabbico.repos.RepoUsuario;
 import io.jsonwebtoken.Jwts;
@@ -15,7 +16,7 @@ import java.util.Objects;
 import static org.springframework.security.crypto.bcrypt.BCrypt.checkpw;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = Run.class)
 public class LoginTest {
 
     @Autowired
@@ -28,6 +29,13 @@ public class LoginTest {
         Usuario usuario = repoUsuario.findUsuarioByNome(nome);
         // response.setHeader("Token", generateToken(usuario));
         assert Objects.equals(nome, usuario.getNome()) && checkpw(senha, usuario.getSenha());
+    }
+
+    @Test
+    public void hashMatch(){
+        // Somente $2a$
+        assert(checkpw("guest", "$2a$12$mmqoK.Ce3MTK0arsFT2b3OBx1UixntbfbEUKqtUf2ez3IOjzYdDF6"));
+
     }
 
     @Test
