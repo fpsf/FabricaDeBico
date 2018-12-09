@@ -1,11 +1,9 @@
 package fatec.ads.fabbico.repos;
 
 import fatec.ads.fabbico.ents.Bico;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.CrudRepository;
 
-@Repository
-public interface RepoBico extends JpaRepository<Bico, Long> {
+public interface RepoBico extends CrudRepository<Bico, Long> {
 
     // List<Bico> findBicosByTituloContains(String titulo);
 

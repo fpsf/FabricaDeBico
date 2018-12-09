@@ -5,14 +5,13 @@ import fatec.ads.fabbico.ents.Bico;
 import fatec.ads.fabbico.jsonviews.ClasseViews;
 import fatec.ads.fabbico.repos.RepoBico;
 import fatec.ads.fabbico.reqbodies.BicoRequestBody;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * Classe controladora com as rotas de requisições essenciais.
@@ -27,61 +26,124 @@ import java.util.List;
  *
  */
 @RestController
-@RequestMapping("/main")
+@RequestMapping("/novobico")
 public class RestBicos {
+
+    /*
+
+    return new ResponseEntity(HttpStatus.FORBIDDEN);
+
+    ████████████████████████████████████████████████████████████████▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒
+    ██████████████████████████▓▓▒▒É▒▒▓█████████████▓▒▒▒▒▓▓██████████▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒
+    ██████████████████████████▒▒@RH½║É▒███████████▒Fï½╠╠▒╬█████████▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒
+    ███████████████████████████▒▒▒@H|╚╠╠▓█▓▓▒▒▓██▒B½╔║╠▒╬██████████▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒
+    █████████████████████▓▓██████▓▒@N|[╠╠▓█▒▒▒╬█▓▒½╠╠╬▒▓██████████████▓▓▓▓▒▒▒▒▒▒▒▒▒▒
+    ▓██████████████▓▓▓▓▒▒▒▒▒▓▓▓███▓▒@@╦║╠╬█▒▒╬▓█▒ï║╬╬╬████▓▓▓▓▒▒▒▒▒▒▓▓▓▓█▓▒▒▒▒▒▒▒▒▓█
+    ▒▓▓▓█████████▓▓▒▒▒▒▒ÉÉÉÉÉÉÉ▒▒▓▓█▒▒@╠╠╠▓█▒╬█▓ï║╬╬▓███▓▒▒▒▒É▒ÉÉÉÉÉ▒▒▒▒▓▓▓▓▒ÉÉ▓██▓▓
+    ▒▒▒▒▓▓████▓▒▒▒▒▒▒▒▒¿╠╠╠RH||½FÉ▒▒█▓▒b╠╠╢█▒▓█▒╠╬╬███▓▒▒▒▒É@╬╢ÉÉ▄▄F╬▒ÉÉ▒É▒▒▒▓██▓▓▓▓
+    ▒▒▒▒▓▓███▓▓▒▓▓▓▓█▓█▓█▓▓▓▒▒@╣╦╔[╠╬▓▓▒@╠╠█▓▓█▒╬╬██▓▒╬╬▒▒╬▓█▓██▓██▓▓▓▓▌▄▒╟É▒▒▓▓▓▓▓▓
+    ▒▒▒▒▓██████████▓███▓▓▓██▓▓██▓▒@╣╠▒▓█▒R╠▓▓▓▒▒▓█▓▓▒@▄██▓█▓▓▀▒▓▓█▀▀▓▓▓▓▓███▓▓▒▓▓▓▓▒
+    ▒▒▒▓████████▓▓▓▓▓"▀▓▓¡,▓▓▌╠▓████▒╬ÉÉ▌R╠▓▓█▒▓█▓▒▓████▓▓▓░,╬▒▒"╓óÉR"╓╦▓▒▀▓▓▓▓▓██▓▒
+    ╠É╬▓█████▓▀▓▀▄_╙╫▓▓████████████▓██▓▄╠▒╠╠▒▌╬█▓██████████▓▓█████▓[╓▒@P[╓d╠▓▀▒▒▓▓▓▓
+    ║╠╠▀▓▓▓▀▒▒,_╙▓▓█████████████████████▓▓▄╦å╦▓████████▓▒▓▓FF▓▓É▓▓█▓██▄▄▓▒▀╔@███▓▓▒É
+    F║║╠ÉÉ▒▄_╙▓▓▓██████▓▓▓█▓█▓▓▓███████████▌╬███████████▓█▓▌¡▌╟_▐▒▌╟▓▓╣▓█▄███▓▒▒▒ÉF╠
+    H|½║╠╠É▒▓▒╬█████▓É▓▌▒▓▓▒▓▓█▓▀▀▀▀▀████▓██▒████████▓▀▀▓█▓█▓▓▓╔▐ñ▌╫▒▌╠▓████▒▒▒▒É╠╠╠
+    H|½║╠╠É▒▒▓████É▒▌_▌▓╬████▓╬▒▓▓▓█▓█▄▄▀▀▓█«████▓█▓██▓▓▓▒▒▓█▓█▒█▒ƒ▒É░║▓▓██▓▒▒▒ñÉR╠╠
+    H|½╠É@╬▒▓████▓ï▒╟╠▓▓████▀▄▄g▒▓▓▓▓ä▓█▓▓█▓▄▓▓█▓█▌%█▓▓▓▒µ▄▒▀██▓█▓░▓╣]▐▒▓██▓▓▒▒@ÉBR╠
+    ╦╠@É@╬▒▓████▓▓j╟▓▓▓█▓█▄▒▓▀T▄▄╗╫▓█▒▄▄░███▒███▓▓▄▒▓▓▒╗▄▄░▀▓▒▓█▓█▓▓▓╔█▓▓███▓▓▒▒@ÉBB
+    @@@@╬▓██████▒██▒█▓▓██▓▀▄q▒▓▀▀T▐▌▄███████▓█████▓█▄╟"T*▀╬▒▒▄"▀█▓▓▓▓▒▓█▓████▓▓▒▒@@É
+    ▒▒▒▓▓████████▓▓▒▓▓██▀▄▓▀█████████████▒j▌█▐"▌█▓██████████▄▀▓▓▓██▓▓█▓▓███████▓▒▒▒ñ
+    ▒▒▓██████████▒█████╬▓▀██████████▓▓██▓██▓▓█████▀▀▒╣▓▒▒▓██████▓▓▓█▓▓█▓██▓▒▒▓███▓▒▒
+    ▒▓████▓▓▓▓████▓███▓▀█████████▓▒▓▓██▓█▀██░▓▓▀▓@▒▒ÉÉ╠▒▓████████▓███▓▓████▓▒ÉÉ▒▓▓▓▓
+    ▓▓▀ÉÉÉ▒▒▓███████▓█▄███████████▓▒ÉÉÉ▒▓▓▒╠██▄╟ÉF]½▄╬▓████▓▓▓▓█████▓████████▒j╠╠ÉÉÉ
+    Fï½╔╠╬╬▓█████████▓███▓▓▓▓▒▓▓▓▓██▓▒▒╬╬╬██▓▓██╠╠▄▓███▓▓▒ÉÉÉ╠▒▓██████▓▓▓▓████▓▒╣╠╠╠
+    ╦╠@╬▒▓████████▓▓██▓█▒▒▒▒ÉÉÉ▒╬▀▓▒▒É▓▓▓▓▓█▌▓█▌É▀▀▀▀▀ÉÉÉÉÉÉÉÉÉÉ╠▓█▒█▒▒▒▒▒▒▓████▓▒╠╠
+    @╬▒▓█████████▓▀▀É▒ÉÉ▓▓▓jÉBÉ╬ñÉÉÉÉÉ╬ÉÉ▀█▌_-██▀▒▄░╠╠[╠╠╠╠╠ÉÉ@╬▒▒▒ÉÉ▒▀▒▓▒▒▒▒▓█████▓
+    ████████████É╔▓████▓▒╬É▓█╠╬ÉÉ╬ñÉ╠▀Ü▄█j▓__¬^█░█▌ZÉ╫[╠╠BBF╠╠▀╔▓███▓███▓É▓▒ÉÉ▒▓████
+    ██▓▓████▓▓█î║█▓▒▒▒ÉÉÉ▓▓É▓█@▒ÉÉ╠╠▌µ████╔½½¡╔Ö▒█▓█▒É▌╠B╠╠╠╠f║██É▒▒▒▒▒É█▌╠▓▒▒╬███▓▓
+    ██▓▓████▓▓█j║█▒▒▒▒ß▀▄╠▓▌╠█▒É╠╠B╠▀▓▓██╠µ╠█▌µµÉ███╠╟░B╠╠F╠▒I▓█▒╬▒É╠╟▒▒B█ï║▒@╣██▓╬▓
+    ███▓▓███▓▓█▓╬╠▓▄▒█'╠█@╟▒╠█▄▓▒▄▄▄▄╠██╬▒▒███▓▒▒╬▓▓▒▄▄▄╣▓▓▌▌j▓█▒▌ï╟█▒▒▒╬▀╠█▒╣██▓É▓█
+    ████▒▓██▓▓▒██▓▄▄▄@▒▓▓╬▓É▓██████████╬▓▓▓████▓▓▓▓███████████▄▓▌▓▒¿▀▀RÉ▒╬█▓╣▓██b▓██
+    █▓▓█▓╬██▓▓▒▒É▓████▓▒▒▌É╣█▒▄µµµ▄▄▄▒▓▓▓▓██████▓▓▓▓▒▒▒▒▄╬╬É╠▓▓╬▒▓▓▓▓▓▓▓██▒▒▓██É▓██▓
+    ██▓██▓Ä██▓▓▓▒▒▒▒▒▒▓▒▓▓▒É█▓▒▓▓▓▓▓█▓▓▓▓████████▓▓▓▓▓▓▓▓▓▓▓▒█▓▒▓██▒▒▒▒▒▒▒▓███▒▓██▓▒
+    ██▓▓██▓Ä▓██▓▓▓▓▓▓▓▓▓▓█▓▒É▓█▓▓▒▒▓▓████████████████▓▓▓▓▓▓██▀╔▓██▓▒▒▒▒▒▒▓███▒▓██▒▒▌
+    ███████▓▄▀██████████████▓ÉÉ██▒▓▓███████████████████▓███▓"╣███▓▓█▓▓▓▓███▓╬███▓▓██
+    █████████▒É▓███░▄▓╬▓▓█████▒▒▀▓▓█████████████████████▓É╬▄██████▓▄▓▓▒É▒▒▄▓████████
+
+    */
 
     // TODO Associar bicos a usuários.
 
     private RepoBico repoBico;
 
+    @Autowired
     public RestBicos(RepoBico repoBico){
         this.repoBico = repoBico;
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity addBico(@RequestBody BicoRequestBody bicoRequest){
-        try{
-            Bico bico = new Bico();
-            // TODO Isso está certo?
-            bico.setTitulo(bicoRequest.getTitulo());
-            bico.setPagamento(bicoRequest.getPagamento());
-            bico.setDescricao(bicoRequest.getDescricao());
-            bico.setUsuario_id(bicoRequest.getUsuario_id());
-            repoBico.save(bico);
-            return new ResponseEntity(HttpStatus.OK);
+        if (bicoRequest.getUsuario_id() != null){
+            try{
+                Bico bico = new Bico();
+                // TODO Isso está certo?
+                bico.setTitulo(bicoRequest.getTitulo());
+                bico.setPagamento(bicoRequest.getPagamento());
+                bico.setDescricao(bicoRequest.getDescricao());
+                bico.setUsuario_id(bicoRequest.getUsuario_id());
+                repoBico.save(bico);
+                return new ResponseEntity(HttpStatus.OK);
+            }
+            catch (Exception e){
+                return new ResponseEntity(HttpStatus.NOT_ACCEPTABLE);
+            }
         }
-        catch (Exception e){
-            return new ResponseEntity(HttpStatus.NOT_ACCEPTABLE);
+        else{
+            return new ResponseEntity(HttpStatus.FORBIDDEN);
         }
-
     }
 
     @RequestMapping(method = RequestMethod.PATCH)
     public ResponseEntity updateBico(@RequestBody BicoRequestBody bicoRequest){
-        try{
-            deleteBico(bicoRequest);
-            addBico(bicoRequest);
-            return new ResponseEntity(HttpStatus.OK);
+        if (bicoRequest.getUsuario_id() != null){
+            try{
+                deleteBico(bicoRequest);
+                addBico(bicoRequest);
+                return new ResponseEntity(HttpStatus.OK);
+            }
+            catch (Exception e){
+                return new ResponseEntity(HttpStatus.FAILED_DEPENDENCY);
+            }
         }
-        catch (Exception e){
-            return new ResponseEntity(HttpStatus.FAILED_DEPENDENCY);
+        else{
+            return new ResponseEntity(HttpStatus.FORBIDDEN);
         }
     }
 
     @RequestMapping(method = RequestMethod.GET)
     @JsonView(ClasseViews.BicoView.class)
-    public List<Bico> allBicos(){
-        return repoBico.findAll();
+    public ResponseEntity allBicos(@RequestBody BicoRequestBody bicoRequest){
+        if (bicoRequest.getUsuario_id() != null){
+            return new ResponseEntity<>(repoBico.findAll(), HttpStatus.OK);
+        }
+        else{
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+        }
     }
 
     @RequestMapping(method = RequestMethod.DELETE)
-    public  ResponseEntity deleteBico(@RequestBody BicoRequestBody bicoRequest){
-        try {
-            repoBico.deleteById(bicoRequest.getId());
-            return new ResponseEntity(HttpStatus.OK);
+    public ResponseEntity deleteBico(@RequestBody BicoRequestBody bicoRequest){
+        if (bicoRequest.getUsuario_id() != null){
+            try {
+                repoBico.deleteById(bicoRequest.getId());
+                return new ResponseEntity(HttpStatus.OK);
+            }
+            catch (Exception e){
+                return new ResponseEntity(HttpStatus.NO_CONTENT);
+            }
         }
-        catch (Exception e){
-            return new ResponseEntity(HttpStatus.NO_CONTENT);
+        else{
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
     }
 

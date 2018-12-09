@@ -8,7 +8,6 @@ import fatec.ads.fabbico.jsonviews.ClasseViews;
 import fatec.ads.fabbico.repos.RepoUsuario;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -52,7 +51,7 @@ public class RestUsuario {
         }
     }
 
-    private static String generateToken(@NotNull Usuario usuario) throws JsonProcessingException {
+    private static String generateToken(Usuario usuario) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         usuario.setSenha(null);
         String usuarioJson = mapper.writeValueAsString(usuario);
