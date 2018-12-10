@@ -9,7 +9,7 @@ import fatec.ads.fabbico.repos.RepoUsuario;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +23,7 @@ import static org.springframework.security.crypto.bcrypt.BCrypt.checkpw;
 
 @RestController
 @RequestMapping("/login")
+@CrossOrigin
 public class RestUsuario {
 
     private final RepoUsuario repoUsuario;
@@ -34,20 +35,21 @@ public class RestUsuario {
 
     @RequestMapping(method = RequestMethod.POST)
     @JsonView(ClasseViews.UserView.class)
-    @CrossOrigin(exposedHeaders = "Token")
     public ResponseEntity login(String nome, String senha , HttpServletResponse response){
         try{
             Usuario usuario = repoUsuario.findUsuarioByNome(nome);
-            response.setHeader("Token", generateToken(usuario));
+            HttpHeaders headers = new HttpHeaders();
             if(Objects.equals(nome, usuario.getNome()) && checkpw(senha, usuario.getSenha())){
-                return new ResponseEntity<>(usuario, HttpStatus.OK);
+                // response.setHeader("Token", generateToken(usuario));
+                headers.add(generateToken(usuario), "text/plain; charset=UTF-8");
+                return ResponseEntity.ok().headers(headers).body(usuario);
             }
             else{
-                return new ResponseEntity<>(usuario, HttpStatus.NOT_FOUND);
+                return ResponseEntity.notFound().build();
             }
         }
         catch (Exception e){
-            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+            return ResponseEntity.badRequest().body(null);
         }
     }
 

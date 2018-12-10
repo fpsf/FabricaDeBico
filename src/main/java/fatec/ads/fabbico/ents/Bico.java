@@ -22,6 +22,9 @@ public class Bico {
     private String descricao;
 
     @ManyToOne(fetch = FetchType.EAGER)
+    @JoinTable(name = "BicoUsuario",
+            joinColumns = { @JoinColumn(name = "USR_ID") },
+            inverseJoinColumns = { @JoinColumn(name = "BICO_ID") })
     private Usuario usuario_id;
 
     public long getId() {

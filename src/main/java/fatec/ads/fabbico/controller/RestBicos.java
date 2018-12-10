@@ -8,10 +8,7 @@ import fatec.ads.fabbico.reqbodies.BicoRequestBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Classe controladora com as rotas de requisições essenciais.
@@ -27,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/novobico")
+@CrossOrigin
 public class RestBicos {
 
     /*
@@ -83,7 +81,7 @@ public class RestBicos {
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity addBico(@RequestBody BicoRequestBody bicoRequest){
-        if (bicoRequest.getUsuario_id() != null){
+        if (bicoRequest.getUsuario_id().getId() == 1){
             try{
                 Bico bico = new Bico();
                 // TODO Isso está certo?
@@ -92,7 +90,7 @@ public class RestBicos {
                 bico.setDescricao(bicoRequest.getDescricao());
                 bico.setUsuario_id(bicoRequest.getUsuario_id());
                 repoBico.save(bico);
-                return new ResponseEntity(HttpStatus.OK);
+                return ResponseEntity.ok().build();
             }
             catch (Exception e){
                 return new ResponseEntity(HttpStatus.NOT_ACCEPTABLE);
@@ -103,13 +101,13 @@ public class RestBicos {
         }
     }
 
-    @RequestMapping(method = RequestMethod.PATCH)
+    @RequestMapping(method = RequestMethod.PUT)
     public ResponseEntity updateBico(@RequestBody BicoRequestBody bicoRequest){
-        if (bicoRequest.getUsuario_id() != null){
+        if (bicoRequest.getUsuario_id().getId() == 1){
             try{
                 deleteBico(bicoRequest);
                 addBico(bicoRequest);
-                return new ResponseEntity(HttpStatus.OK);
+                return ResponseEntity.ok().build();
             }
             catch (Exception e){
                 return new ResponseEntity(HttpStatus.FAILED_DEPENDENCY);
@@ -123,8 +121,9 @@ public class RestBicos {
     @RequestMapping(method = RequestMethod.GET)
     @JsonView(ClasseViews.BicoView.class)
     public ResponseEntity allBicos(@RequestBody BicoRequestBody bicoRequest){
-        if (bicoRequest.getUsuario_id() != null){
-            return new ResponseEntity<>(repoBico.findAll(), HttpStatus.OK);
+        if (bicoRequest.getUsuario_id().getId() == 1){
+            // return new ResponseEntity<>(repoBico.findAll(), HttpStatus.OK);
+            return ResponseEntity.ok().body(repoBico.findAll());
         }
         else{
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
@@ -133,10 +132,10 @@ public class RestBicos {
 
     @RequestMapping(method = RequestMethod.DELETE)
     public ResponseEntity deleteBico(@RequestBody BicoRequestBody bicoRequest){
-        if (bicoRequest.getUsuario_id() != null){
+        if (bicoRequest.getUsuario_id().getId() == 1){
             try {
                 repoBico.deleteById(bicoRequest.getId());
-                return new ResponseEntity(HttpStatus.OK);
+                return ResponseEntity.ok().build();
             }
             catch (Exception e){
                 return new ResponseEntity(HttpStatus.NO_CONTENT);

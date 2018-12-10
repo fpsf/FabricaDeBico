@@ -1,52 +1,50 @@
-CREATE TABLE Usuario
-(
-    id bigint,
-    nome varchar(32),
-    senha varchar(128),
-    email varchar(64),
-    telefone varchar(16)
+CREATE TABLE Usuario (
+	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(20) NOT NULL,
+	senha VARCHAR(128) NOT NULL,
+	email VARCHAR(32) NOT NULL,
+	telefone VARCHAR(16) NOT NULL,
+	PRIMARY KEY (id),
+	UNIQUE KEY UNI_USUARIO_NOME (nome)
 );
 
-CREATE TABLE Bico
-(
-	id bigint,
-	titulo varchar(64),
-	pagamento varchar(128),
-	descricao varchar(512),
-	usuario_id bigint
+CREATE TABLE Bico (
+	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	titulo VARCHAR(20) NOT NULL,
+	pagamento VARCHAR(128),
+	descricao VARCHAR(512),
+	PRIMARY KEY (id)
+	# UNIQUE KEY UNI_AUT_NOME (AUT_NOME)
 );
 
-CREATE TABLE BicoUsuario
-(
-  id_usuario BIGINT NOT NULL,
-  id_bico BIGINT NOT NULL,
-  PRIMARY KEY (id_usuario, id_bico),
-  CONSTRAINT usuario_fk FOREIGN KEY (id_usuario) REFERENCES Usuario(id)
-  ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT bico_fk FOREIGN KEY (id_bico) REFERENCES Bico(id)
-  ON DELETE CASCADE ON UPDATE RESTRICT
+CREATE TABLE BicoUsuario (
+	USR_ID BIGINT UNSIGNED NOT NULL,
+	BICO_ID BIGINT UNSIGNED NOT NULL,
+	PRIMARY KEY (USR_ID, BICO_ID),
+	FOREIGN KEY AUT_USUARIO_FK (USR_ID) REFERENCES Usuario (id) ON DELETE RESTRICT ON UPDATE CASCADE,
+	FOREIGN KEY AUT_AUTORIZACAO_FK (BICO_ID) REFERENCES Bico (id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 # Bcrypt (12 rounds) == admin
-# $2y$12$j2RnQ1vFbOYqbTj/ez0aruzoOLiqQsOnDJafhhN4vqPYA6NsTDddu
+# $2a$12$MTWP4jOXyHI6ECZuBypGFOvDkq0LrHWA2QP6d1e9d8YABvZl8MXle
 
 INSERT INTO Usuario VALUES
 (
 	1,
 	'admin',
-	'$2a$12$j2RnQ1vFbOYqbTj/ez0aruzoOLiqQsOnDJafhhN4vqPYA6NsTDddu',
+	'$2a$12$MTWP4jOXyHI6ECZuBypGFOvDkq0LrHWA2QP6d1e9d8YABvZl8MXle',
 	'admin@admin.com',
 	'4002-8922'
 );
 
 # Bcrypt (12 rounds) == guest
-# $2y$12$9Q0veQHD1Qx4hyhb3N5T.e50YcAKDrXcIGwjnDjRE852RefDKVQbC
+# $2a$12$oFQHrLOBxZMdOBTC/n0UZ.rG1zM0U5QdnmpaPFWjSStinhchWeD82
 
 INSERT INTO Usuario VALUES
 (
 	2,
 	'guest',
-	'$2y$12$9Q0veQHD1Qx4hyhb3N5T.e50YcAKDrXcIGwjnDjRE852RefDKVQbC',
+	'$2a$12$oFQHrLOBxZMdOBTC/n0UZ.rG1zM0U5QdnmpaPFWjSStinhchWeD82',
 	'guest@guest.com',
 	'1234-5678'
 );

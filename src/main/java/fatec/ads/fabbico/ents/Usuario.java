@@ -25,7 +25,7 @@ public class Usuario {
     @JsonView(ClasseViews.UserView.class)
     private String telefone;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "usuario_id", fetch = FetchType.EAGER)
     private List<Bico> bicos;
 
     public long getId() {
